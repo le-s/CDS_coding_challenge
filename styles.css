@@ -1,0 +1,22 @@
+.columnsnrows {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.inputspacing {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.inputstyle {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+tr th {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}

@@ -1,0 +1,87 @@
+<html>
+  <head></head>
+  <link rel="stylesheet" href="styles.css">
+  <body>
+    <h1>UI App</h1>
+    <div class="columnsnrows">
+      <div class="columnsnrows">
+        <p>Columns</p>
+        <p>x</p>
+        <p>Rows</p>
+      </div>
+
+    </div>
+    <div class="inputspacing">
+      <select name="column" id="column" class="inputstyle">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <select name="rows" id="rows" class="inputstyle">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+    </div>
+    <div class="inputspacing">
+      <input type="button" id="create" value="Create" onclick="createTable()" class="inputstyle">
+      <input type="button" id="reset" value="Reset" onclick="resetTable()" class="inputstyle">
+    </div>
+    
+    <div id="grid"></div>
+
+  </body>
+
+  <script>
+    function createTable() {
+      let emptyTable = document.createElement('table');
+      emptyTable.setAttribute('id', 'emptyTable'); 
+
+      let rowNode = document.getElementById("rows");
+      let rowVal = rowNode.options[rowNode.selectedIndex].value;
+
+      let colNode = document.getElementById("column");
+      let colVal = colNode.options[colNode.selectedIndex].value;
+
+      for (let i = 0; i < rowVal; i++) {
+        let tr = document.createElement("tr");
+        emptyTable.appendChild(tr);
+
+        for (let i = 0; i < colVal; i++) {
+          let th = document.createElement("th");
+          tr.appendChild(th);
+        }
+      }
+
+
+      let grid = document.getElementById("grid");
+      grid.appendChild(emptyTable);
+
+    }
+    
+    function resetTable() {
+      let deleteNode = document.getElementsByTagName("table");
+
+      for (let i = 0; i < deleteNode.length; i++) {
+        deleteNode[i].remove();
+      }
+
+      console.log(deleteNode);
+    }
+
+    function addRow() {
+    }
+  </script>
+</html>
